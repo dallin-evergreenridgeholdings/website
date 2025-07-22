@@ -24,7 +24,7 @@ jobs:
           aws-region: us-west-2
 
       - name: Sync files to S3
-        run: aws s3 sync ./ s3://evergreenridgeholdings.com --delete --acl public-read --exclude ".git/*" --exclude ".github/*"
+        run: aws s3 sync ./ s3://evergreenridgeholdings.com --delete --exclude ".git/*" --exclude ".github/*"
 
       - name: Invalidate Cloudflare cache (optional)
         if: ${{ always() }}
